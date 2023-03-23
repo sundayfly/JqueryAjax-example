@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> 操作元素的样式 </title>
+        <style type="text/css">
+            div{
+                padding: 8px;
+                width: 180px;
+            }
+            .blue{
+                background: blue;
+            }
+            .larger{
+                font-size: 30px;
+            }
+            .pink{
+                background: pink;
+            }
+            .green{
+                background: green;
+            }
+            /* .pink{
+                background: pink;
+            } */
+        </style>
+    </head>
+    <body>
+        <!-- 
+            操作元素的样式
+            attr("class")           获取元素的class属性值
+            attr("class", "属性值")  设置元素的样式(设置样式，原本样式会被覆盖)
+            addClass("样式名")       添加样式(在原来的样式上添加样式，原本的样式会保留，如果出现相同的样式，则以样式中后定义的为准)
+            css()                   添加具体样式
+                                    css("具体样式名","样式值"); 设置单个样式
+                                    css({"具体样式名":"样式值","具体样式名":"样式值"}); 设置多个样式
+
+            removeClass("样式名")    移除样式
+
+         -->
+         <h3>css()方法设置元素样式</h3>
+        <div id="conBlue" class="blue larger"> 天蓝色 </div>
+        <div id="conRed" > 大红色 </div>
+        <div id="remove" class="blue larger">天蓝色</div>
+
+    
+    <script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        // attr("class")    获取元素的样式名
+        var classBlue = $("#conBlue").attr("class");
+        console.log(classBlue);
+
+        // attr("class", "样式名")
+        $("#conBlue").attr("class","green");  
+
+        // addClass("样式名")
+        $("#conBlue").addClass("larger");
+
+        $("#conBlue").addClass("pink"); //这里pink在green前，所以还是green
+
+        // css() 添加具体的样式（添加行内样式）
+        $("#conRed").css("font-size","40px");
+        $("#conRed").css({"font-family":"微软雅黑", "color": "red"})
+
+        // removeClass("样式名") 移除样式
+        $("#remove").addClass("larger");
+        $("#remove").removeClass("larger")
+
+
+
+    </script>
+    </html>

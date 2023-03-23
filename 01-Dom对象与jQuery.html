@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dom对象Jquery包装集对象</title>
+    </head>
+    <body>
+        <div id="mydiv">文本</div>
+    </body>
+    <!--
+        Dom对象
+            通过js方式获取的元素对象（document)
+        Jquery对象
+            能打过jquery方法获取的元素对象，返回的是jquery包装集
+    -->
+
+    <!-- Dom对象  -->
+    <script src="js/jquery-2.1.4.js" type="text/javascript" charset="utf-8"> </script>
+
+    <script type="text/javascript">
+        var divDom = document.getElementById("mydiv");
+        console.log(divDom);
+        var divsDom = document.getElementsByTagName("div");
+        console.log(divsDom);
+        //js获取不存在的元素 返回null
+        var spanDom = document.getElementsByTagName("span")
+        console.log(spanDom);
+        var spanDom2 = document.getElementById("myspan");
+        console.log(spanDom2);
+
+        /* jquery对象 */
+        // 通过id选择获取元素对象， $("#id属性值")
+        var divJquery=$("#mydiv");
+        console.log(divJquery);
+
+        //jquery获取不存在的元素 返回对象
+        var spanJquery = $("#myspan")
+        console.log(spanJquery);
+
+        /* Dom 对象转jquery对象 */
+        // Dom 对象转为jquery对象，只需要利用$()方法进行包装即可
+        var divDomJquery = $(divDom);
+        console.log(divDomJquery)
+
+        /* Jquery对象 转 Dom对象 */ 
+        //获取包装集中指定下标的元素，将jquery对象转换成dom对象
+        var divJqueryToDom = divJquery[0];
+        console.log(divJqueryToDom);
+    </script>
+</html>
