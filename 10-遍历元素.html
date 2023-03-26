@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> 遍历元素 </title>
+        <style type="text/css">
+            span{
+                color: white;
+                padding: 8px;
+                margin: 5px;
+                float: left;
+            }
+            .green {
+                background-color: green;
+            }
+            .blue {
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <span class="green">jquery<a>删除</a></span>
+        <span class="green">javase</span>
+        <span class="green">http协议</span>
+        <span class="green">servlet</span>
+    </body>
+    <!-- 
+        each()
+            $(select).each(function(index,element)):遍历元素
+            参数function为遍历时的回调函数
+            index为遍历元素的序列号，从0开始
+            element是当前的元素，此时是dom元素
+     -->
+    <script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        // 获取指定元素并遍历
+        $(".green").each(function(index,element){
+            console.log(index);
+            console.log(element);
+            console.log(this); //每个元素
+            //转成jquery对象
+            console.log($(this));
+        });
+        </script>
+    </html>
